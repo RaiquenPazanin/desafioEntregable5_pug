@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Mi app
+    body 
+        h1 #{pageTitle}
+
+        form#searchSentiment-form(action='javascript:analyzeSentiment()', method='POST')
+            input(type='text' placeholder='Name' name='title' value='#{product.title}' required)
+            input(type='number' placeholder='price' name='price' value='#{product.price}' required)
+            input(type='text' placeholder='url' name='thumbnail' value='#{product.thumbnail}' required)
+            button(type="submit" id="sentiAnalysis" name="sentiAnalysis") CARGAR

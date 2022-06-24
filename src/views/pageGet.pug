@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Mi app
+    body 
+        h1 #{pageTitle}
+
+        form#searchSentiment-form(action='/productos', method='POST')
+            input(type='text' placeholder='Name' name="title" required)
+            br
+            input(type='number' placeholder='price' name="price"  required)
+            br
+            input(type='text' placeholder='url imagen del producto' name="thumbnail"  required)
+            br
+            button(type="submit" value="enviar") CARGAR
+
+        table 
+            tr
+                th DESCRIPCION
+                th PRECIO
+                th IMAGEN
+            tbody
+            each p in datos
+                tr
+                    td #{p.title}
+                    td #{p.price}
+                    td 
+                        img(src= "#{p.thumbnail}"  height="60" width="60")
+        
